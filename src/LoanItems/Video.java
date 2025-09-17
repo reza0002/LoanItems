@@ -7,6 +7,6 @@ public class Video extends LoanItems{
 
     @Override
     public String toString(){
-        return ( " " + " " + type + " " + title + " ");
+        return ( " " + " " + type + " " + title + "\n ");
     }
 }

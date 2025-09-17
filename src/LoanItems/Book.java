@@ -7,6 +7,6 @@ public class Book extends LoanItems { //udvider til superclassen
 
     @Override
  public String toString(){
-        return (" " + type + " " +  title + " ");
+        return (" " + type + " " +  title + "\n");
     }
 }
