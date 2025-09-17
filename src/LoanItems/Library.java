@@ -28,11 +28,15 @@ public class Library {
             String type = scanner.nextLine();
             System.out.println("\tTitle: ");
             String title = scanner.nextLine();
-            if (type.equalsIgnoreCase("B")) {
-                items[i] = new Book(title, type);
-            } else if (type.equalsIgnoreCase("V")) {
-                items[i] = new Video(title, type);
-            }
+
+                if (type.equalsIgnoreCase("B")) {
+                    items[i] = new Book(i + 1, title, type);
+                } else if (type.equalsIgnoreCase("V")) {
+                    items[i] = new Video(i + 1, title, type);
+                }else {
+                    System.out.println("We don't have that in this library. Please try again.");
+                }
+
         }
         System.out.println("LIST OF LOAN ITEMS:");
         System.out.println("-------------------");
