@@ -24,15 +24,15 @@ public class Library {
 
         for (int i = 0; i < numberOfItems; i++) {
             System.out.println("ITEM no. " + (i + 1));
-            System.out.println("\tType (B or V: ");
+            System.out.print("\tType (Book or Video): ");
             String type = scanner.nextLine();
-            System.out.println("\tTitle: ");
+            System.out.print("\tTitle: ");
             String title = scanner.nextLine();
 
-                if (type.equalsIgnoreCase("B")) {
-                    items[i] = new Book(i + 1, title, type);
-                } else if (type.equalsIgnoreCase("V")) {
-                    items[i] = new Video(i + 1, title, type);
+                if (type.equalsIgnoreCase("Book")) {
+                    items[i] = new Book(i + 1, type, title);
+                } else if (type.equalsIgnoreCase("Video")) {
+                    items[i] = new Video(i + 1, type, title);
                 }else {
                     System.out.println("We don't have that in this library. Please try again.");
                 }
@@ -40,6 +40,7 @@ public class Library {
         }
         System.out.println("LIST OF LOAN ITEMS:");
         System.out.println("-------------------");
+        System.out.println("ID  Type\tTitle");
         for(LoanItems loanItems : items) {
             System.out.println(loanItems);
         }
