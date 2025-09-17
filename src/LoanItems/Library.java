@@ -47,8 +47,6 @@ public class Library {
                     items[i] = new Book(i + 1, type, title);
                 } else if (type.equalsIgnoreCase("Video")) {
                     items[i] = new Video(i + 1, type, title);
-                }else {
-                    System.out.println("We don't have that in this library. Please try again.");
                 }
 
         }
