@@ -1,41 +1,35 @@
 package LoanItems;
 
-import java.util.Scanner;
-
+//superclass
 public class LoanItems {
-    public static void main(String[] args) {
+    protected String type;
+    protected String title;
 
+    //Constructor
+    public LoanItems(String type, String title) {
+        this.type = type;
+        this.title = title;
     }
-    public static void welcomeMessage() {
-        System.out.println("Welcome to the library!");
-        System.out.println("Right now there are no items to loan...");
-    }
-    public static void registerItems(){
-        System.out.println("So let's first register some items!");
-        System.out.println("How many items do you want to register?");
 
-        Scanner scanner = new Scanner(System.in);
-        int numberOfItems = scanner.nextInt();
-        scanner.nextLine();
-
-        LoanItems[] items = new LoanItems[numberOfItems];
-
-        for (int i = 0; i < numberOfItems; i++) {
-            System.out.println("ITEM no. " + (i + 1));
-            System.out.println("\tType (B or V: ");
-            String type = scanner.nextLine();
-            System.out.println("\tTitle: ");
-            String title = scanner.nextLine();
-            if (type.equalsIgnoreCase("B")) {
-                items[i] = new Book(title, type);
-            } else if (type.equalsIgnoreCase("V")) {
-                items[i] = new Video(title, type);
-            }
-        }
-        System.out.println("LIST OF LOAN ITEMS:");
-        System.out.println("-------------------");
-        for(LoanItems loanItems : items) {
-            System.out.println(loanItems);
+    //Getters
+    public String getType(){
+        return type;
     }
+    public String getTitle(){
+        return title;
     }
+
+    //Setters
+    public void setType(String type){
+        this.type = type;
+    }
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    @Override
+    public String toString(){
+        return " " + type + "\t" + title + "\n";
+    }
+
 }
