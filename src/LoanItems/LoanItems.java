@@ -38,7 +38,7 @@ public class LoanItems {
 
     @Override
     public String toString(){
-        return id + "\t" + type + "\t" + title + "\n";
+        return id + "\t" + type.toUpperCase() + "\t" + title + "\n";
     }
 
 }
